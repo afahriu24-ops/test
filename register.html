@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Greenline Market - Create account</title>
+  <link rel="stylesheet" href="style/register.css" />
+  <link rel="stylesheet" href="style/greenline.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="auth-page">
+
+  <aside class="auth-aside">
+    <a href="shop.html" class="brand-link"><span class="brand-mark" aria-hidden="true">G</span>Greenline Market</a>
+    <div class="auth-aside-copy">
+      <p class="auth-eyebrow">WELCOME TO GREENLINE</p>
+      <h2>Make room<br>for good things.</h2>
+      <p>Create an account and find your new everyday favorites.</p>
+    </div>
+    <p class="auth-aside-foot">A little more considered. A lot more you.</p>
+  </aside>
+  <div class="card">
+    <div class="header">
+      <div class="logo">
+        G
+      </div>
+      <h1>Create an account</h1>
+      <p>Sign up to get started</p>
+    </div>
+
+    <div class="form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" placeholder="John" />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" placeholder="Doe" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" />
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" id="confirm-password" placeholder="••••••••" />
+      </div>
+
+      <button id="create-account-button" type="button">Create account</button>
+    </div>
+
+    <p class="footer">Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+  <script src="scripts/users/user.js"></script>
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/register.js"></script>
+</body>
+</html>

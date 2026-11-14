@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greenline Market - Account</title>
+    <link rel="stylesheet" href="style/account.css">
+    <link rel="stylesheet" href="style/greenline.css">
+</head>
+<body class="account-page">
+    <div class="container">
+        <a href="shop.html" class="brand-link"><span class="brand-mark" aria-hidden="true">G</span>Greenline Market</a>
+        <p class="account-eyebrow">YOUR WORKSPACE</p>
+        <h2>My Account</h2>
+        <div id="user-info">
+            <div class="form-group">
+                <label for="name">First Name</label>
+                <input type="text" id="name" readonly>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" readonly>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" readonly>
+            </div>
+            <button id="edit-btn" class="btn btn-blue">Edit</button>
+            <button id="save-btn" class="btn btn-green">Save</button>
+            <button id="cancel-btn" class="btn btn-gray">Cancel</button>
+        </div>
+        <div class="logout-area">
+            <button id="logout-btn" class="btn btn-red">Logout</button>
+        </div>
+    </div>
+
+    <dialog id="logout-dialog" class="confirm-dialog" aria-labelledby="logout-dialog-title">
+        <div class="confirm-dialog-icon" aria-hidden="true">↗</div>
+        <h3 id="logout-dialog-title">Log out of your account?</h3>
+        <p>You'll need to sign in again to continue.</p>
+        <div class="confirm-dialog-actions">
+            <button type="button" class="btn btn-gray" id="cancel-logout">Stay logged in</button>
+            <button type="button" class="btn btn-red" id="confirm-logout">Log out</button>
+        </div>
+    </dialog>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/users/user.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/account.js"></script>
+</body>
+</html>

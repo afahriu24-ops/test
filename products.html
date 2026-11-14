@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greenline Market - Products</title>
+    <link rel="stylesheet" href="style/admin.css">
+    <link rel="stylesheet" href="style/greenline.css">
+</head>
+<body class="admin-page">
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h5><span class="brand-mark" aria-hidden="true">G</span><span>Greenline Market</span></h5>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section-title">MAIN</li>
+            <li>
+                <a href="admin.html">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="orders.html">
+                    <span class="icon">🛍️</span>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="products.html" class="active">
+                    <span class="icon">📦</span>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="customers.html">
+                    <span class="icon">👥</span>
+                    <span>Customers</span>
+                </a>
+            </li>
+
+            <li class="sidebar-section-title">STORE</li>
+            <li>
+                <a href="revenue.html">
+                    <span class="icon">💲</span>
+                    <span>Revenue</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <h3>Products Management</h3>
+            <a href="account.html" class="account-link" title="Account">
+                <span>👤</span>
+                <span>Admin</span>
+            </a>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-card-icon">📦</div>
+                <h6>Total Products</h6>
+                <h3 id="totalProductsCount">0</h3>
+                <p class="stat-card-change"><span id="totalProductsChange">0 total products</span></p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">✅</div>
+                <h6>In Stock</h6>
+                <h3 id="inStockCount">0</h3>
+                <p class="stat-card-change"><span id="inStockChange">Good availability</span></p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">⚠️</div>
+                <h6>Low Stock</h6>
+                <h3 id="lowStockCount">0</h3>
+                <p class="stat-card-change"><span id="lowStockChange">Needs attention</span></p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">🚫</div>
+                <h6>Out of Stock</h6>
+                <h3 id="outOfStockCount">0</h3>
+                <p class="stat-card-change"><span id="outOfStockChange">0 out of stock</span></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>All Products</h5>
+                <div>
+                    <button class="btn btn-blue" id="manageCategoriesBtn">🏷️ Manage Categories</button>
+                    <button class="btn btn-green" id="addProductBtn">➕ Add Product</button>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT ID</th>
+                            <th>NAME</th>
+                            <th>CATEGORY</th>
+                            <th>PRICE</th>
+                            <th>STOCK</th>
+                            <th>SALES</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="manageCategoriesModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h5>Manage Categories</h5>
+                <button type="button" class="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="newCategory">Add New Category</label>
+                    <div class="input-row">
+                        <input type="text" id="newCategory" placeholder="Enter category name">
+                        <button class="btn btn-green" type="button" id="addCategoryBtn">Add</button>
+                    </div>
+                </div>
+                <div>
+                    <label>Current Categories</label>
+                    <div id="categoriesList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addProductModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h5>Add New Product</h5>
+                <button type="button" class="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory"></select>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="text" id="productPrice" placeholder="e.g., $99.99">
+                </div>
+                <div class="form-group">
+                    <label for="productStock">Stock Quantity</label>
+                    <input type="number" id="productStock" placeholder="Enter stock quantity" min="0">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-gray modal-close">Cancel</button>
+                <button type="button" class="btn btn-green" id="saveProductBtn">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/users/user.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/users/products.js"></script>
+</body>
+</html>

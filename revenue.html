@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greenline Market - Revenue</title>
+    <link rel="stylesheet" href="style/admin.css">
+    <link rel="stylesheet" href="style/greenline.css">
+</head>
+<body class="admin-page">
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h5><span class="brand-mark" aria-hidden="true">G</span><span>Greenline Market</span></h5>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-section-title">MAIN</li>
+            <li>
+                <a href="admin.html">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="orders.html">
+                    <span class="icon">🛍️</span>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="products.html">
+                    <span class="icon">📦</span>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="customers.html">
+                    <span class="icon">👥</span>
+                    <span>Customers</span>
+                </a>
+            </li>
+
+            <li class="sidebar-section-title">STORE</li>
+            <li>
+                <a href="revenue.html" class="active">
+                    <span class="icon">💲</span>
+                    <span>Revenue</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <h3>Revenue Management</h3>
+            <a href="account.html" class="account-link" title="Account">
+                <span>👤</span>
+                <span>Admin</span>
+            </a>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-card-icon">💲</div>
+                <h6>Total Revenue</h6>
+                <h3 id="revenueTotalRevenue">$0.00</h3>
+                <p class="stat-card-change">From all orders</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">🛍️</div>
+                <h6>Total Orders</h6>
+                <h3 id="revenueTotalOrders">0</h3>
+                <p class="stat-card-change">Orders processed</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">💵</div>
+                <h6>Average Order</h6>
+                <h3 id="revenueAvgOrder">$0.00</h3>
+                <p class="stat-card-change">Per order</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">✅</div>
+                <h6>Completed Orders</h6>
+                <h3 id="revenueCompletedOrders">0</h3>
+                <p class="stat-card-change">All orders completed</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Revenue Trend</h5>
+            </div>
+            <div class="card-body">
+                <div id="revenueTrendGrid" class="month-grid"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Revenue Transactions</h5>
+            </div>
+            <div class="table-wrapper">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>TRANSACTION ID</th>
+                            <th>DATE</th>
+                            <th>CUSTOMER</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="revenueTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/users/user.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/users/revenue.js"></script>
+</body>
+</html>
